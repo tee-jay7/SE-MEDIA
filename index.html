@@ -3,10 +3,9 @@
 
 <head>
   <title>Coming Soon - SE-MEDIA</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
     }
 
@@ -14,7 +13,6 @@
       background-image: url(Banner.jpg);
       background-size: cover;
       height: 100vh;
-      /*       width: 90vw; */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -36,14 +34,84 @@
       padding: 0;
       text-shadow: 1px 1px #000;
     }
+    /* Custom styles */
+    /* .custom-button {
+      background-color: #450043;
+    } */
+    .custom-button {
+      background-color: #004702;
+    }
+
   </style>
 </head>
 
 <body>
   <div class="banner">
     <h1>SE-MEDIA TECH</h1>
-    		<p>Coming Soon!</p>
+    <p>Coming Soon!</p>
+    <button id="myBtn" class="p-2 mt-8 bg-gray-400 hover:bg-gray-600 text-white rounded-lg">Send us a message</button>
   </div>
-</body>
 
+  <!-- The modal -->
+  <div id="myModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <!-- Modal content -->
+    <div class="bg-white p-8 rounded-lg w-80">
+      <button id="closeModal" class="text-gray-500 hover:text-gray-700 float-right text-2xl">&times;</button>
+      <h2 class="text-2xl font-bold mb-4">Send us a message</h2>
+      <form>
+        <label for="name" class="block mb-2">Name:</label>
+        <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded py-2 px-3 mb-4">
+
+        <label for="email" class="block mb-2">Email:</label>
+        <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded py-2 px-3 mb-4">
+
+        <label for="message" class="block mb-2">Message:</label>
+        <textarea id="message" name="message" class="w-full border border-gray-300 rounded py-2 px-3 mb-4"></textarea>
+
+        <button type="submit" class="bg-pink-400 hover:bg-pink-600 text-white py-2 px-4 rounded">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementById("closeModal");
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function () {
+      modal.classList.remove("hidden");
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.classList.add("hidden");
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event){
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+    }
+}
+  </script>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/646cdb1974285f0ec46d2d45/1h14jfo7a';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
 </html>
